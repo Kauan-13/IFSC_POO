@@ -1,0 +1,9 @@
+Primeira aula com um ótima editor de texto!
+
+VI é melhor que EMACS!!!
+
+Gedit é para os fracos!
+
+nano é para crianças!
+
+
