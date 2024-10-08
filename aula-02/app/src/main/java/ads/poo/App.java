@@ -42,6 +42,9 @@ public class App {
                     moedas[5]++;
                     soma += moeda;
                     break;
+                default:
+                    System.out.println("Valor incorreto");
+                    break;
             }
         }
 
