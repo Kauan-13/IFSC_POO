@@ -5,19 +5,19 @@ package ads.poo;
 
 public class App {
     public static void main(String[] args) {
-        Carro fuscaAzul = new Carro();
-        Carro golVerde = new Carro();
+        Carro carroA = new Carro();
+        Carro carroB = new Carro();
 
-        fuscaAzul.setModelo("Fusca");
-        fuscaAzul.setCor("azul");
-        fuscaAzul.setVelocidadeAtual(10);
+        carroA.setModelo("Fusca");
+        carroA.setCor("azul");
+        carroA.setVelocidadeAtual(10);
 
-        golVerde.setModelo("Gol");
-        golVerde.setCor("verde");
-        golVerde.setVelocidadeAtual(30);
+        carroB.setModelo("Gol");
+        carroB.setCor("verde");
+        carroB.setVelocidadeAtual(30);
 
-        System.out.println(fuscaAzul.escreverMensagem());
+        System.out.println(carroA.escreverMensagem());
 
-        System.out.println(golVerde.escreverMensagem());
+        System.out.println(carroB.escreverMensagem());
     }
 }
