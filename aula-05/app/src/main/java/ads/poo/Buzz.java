@@ -3,9 +3,6 @@ package ads.poo;
 import java.util.Random;
 
 public class Buzz {
-
-    Random r = new Random();
-
     private boolean capaceteAberto;
     private boolean asasAbertas;
     private String[] frases = {
@@ -69,6 +66,7 @@ public class Buzz {
     }
 
     public String falar(){
+        Random r = new Random();
         int index = r.nextInt(frases.length);
 
         return frases[index];
