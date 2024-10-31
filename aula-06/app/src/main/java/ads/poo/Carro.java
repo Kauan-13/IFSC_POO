@@ -1,53 +1,53 @@
 package ads.poo;
 
 public class Carro {
-    private int[] posicao = new int[2];
-    // 0. x; 1. y
     private int velocidadeAtual;
 
-    private final int VELOCIDADE_MAXIMA = 200;
-    private final int VELOCIDADE_MINIMA = 0;
+    private final int VELOCIDADE_MAXIMA;
+
     private int aceleracao;
     private int freio;
-    private String tipoPneu;
 
-    public int getAceleracao() {
-        return aceleracao;
+    public Carro(int velocidadeAtual, int VELOCIDADE_MAXIMA, int aceleracao, int freio) {
+        this.VELOCIDADE_MAXIMA = VELOCIDADE_MAXIMA;
+        this.velocidadeAtual = velocidadeAtual;
+        this.aceleracao = 0;
+        this.freio = 0;
+        this.acelerar();
+        this.frear();
+        this.aceleracao = aceleracao;
+        this.freio = freio;
     }
 
-    public void setAceleracao(int a) {
-        aceleracao = a;
+    public int getAceleracao() {
+        return this.aceleracao;
+    }
+
+    public void setAceleracao(int aceleracao) {
+        this.aceleracao = aceleracao;
     }
 
     public int getFreio() {
-        return freio;
+        return this.freio;
     }
 
-    public void setFreio(int f) {
-        freio = f;
+    public void setFreio(int freio) {
+        this.freio = freio;
     }
 
     public int getVelocidadeAtual() {
-        return velocidadeAtual;
+        return this.velocidadeAtual;
     }
 
-    public void setVelocidadeAtual(int v) {
-        velocidadeAtual = v;
+    public void setVelocidadeAtual(int velocidadeAtual) {
+        this.velocidadeAtual = velocidadeAtual;
     }
 
     public void acelerar() {
-        if (VELOCIDADE_MAXIMA >= (velocidadeAtual + aceleracao)){
-            velocidadeAtual += aceleracao;
-        }else{
-            velocidadeAtual = VELOCIDADE_MAXIMA;
-        }
+        this.velocidadeAtual = Math.min(this.velocidadeAtual + Math.max(this.aceleracao, 0), this.VELOCIDADE_MAXIMA);
     }
 
     public void frear() {
-        if ((velocidadeAtual - freio) >= VELOCIDADE_MINIMA){
-            velocidadeAtual -= freio;
-        }else{
-            velocidadeAtual = VELOCIDADE_MINIMA;
-        }
+        this.velocidadeAtual = Math.max(this.velocidadeAtual - Math.max(this.freio, 0), 0);
     }
 }

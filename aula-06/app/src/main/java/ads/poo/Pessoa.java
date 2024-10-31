@@ -2,6 +2,7 @@ package ads.poo;
 
 public class Pessoa {
     private String nome;
+    private String sobrenome;
     private int matricula;
     private String cpf;
     private int telefone;
@@ -11,13 +12,18 @@ public class Pessoa {
     private String[] endereco = new String[6];
     // 0. Número; 1. Rua; 2. Bairro; 3. Cidade; 4. Estado; 5. País;
 
-    public Pessoa(String nome, String cpf){
-        this.nome = nome;
+    public Pessoa(String nome, String sobrenome, String cpf){
+        this(nome, sobrenome);
         this.cpf = cpf;
     }
 
-    public Pessoa(){
+    public Pessoa(String nome, String sobrenome){
+        this(nome);
+        this.sobrenome = sobrenome;
+    }
 
+    public Pessoa(String nome){
+        this.nome = nome;
     }
 
     public String getNome() {
@@ -26,6 +32,14 @@ public class Pessoa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     public String getCpf() {
