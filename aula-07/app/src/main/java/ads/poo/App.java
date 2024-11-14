@@ -5,19 +5,32 @@ package ads.poo;
 
 import edu.princeton.cs.algs4.Draw;
 
+import java.awt.*;
+
 public class App {
 
+    private Draw draw;
+
+    public App() {
+        this.draw = new Draw();
+        this.draw.setCanvasSize(600, 300);
+        this.draw.setXscale(0,600);
+        this.draw.setYscale(0,300);
+    }
+
     public static void main(String[] args) {
-        Draw draw = new Draw();
+        App app = new App();
 
-        draw.filledCircle(.5,.5,.2);
-        
-        draw.setPenColor(Draw.BOOK_LIGHT_BLUE);
-        draw.text(0.5, 0.5,"Kauan");
+        Color verde = new Color(50, 160, 65);
+        Color vermelho = new Color(200, 25, 30);
 
-        draw.setPenColor(Draw.RED);
-        draw.line(.1,.1,.3,.3);
+        Quadriculado q = new Quadriculado(100,50,5,4,20, vermelho);
 
+        Quadriculado q2 = new Quadriculado(300,50,1,1,40, verde);
+
+        q.desenhar(app.draw);
+
+        q2.desenhar(app.draw);
 
     }
 }
