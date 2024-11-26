@@ -1,6 +1,7 @@
 package ads.poo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class Aluno {
@@ -36,6 +37,10 @@ public class Aluno {
         return this.telefones.removeIf(e -> e.equals(telefone));
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public int getMatricula() {
         return matricula;
     }
@@ -44,5 +49,27 @@ public class Aluno {
         return filiacao;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder tel = new StringBuilder();
+        StringBuilder dis = new StringBuilder();
 
+        for (String elemento : telefones){
+             tel.append("- ").append(elemento).append("\n");
+        }
+
+        for (String elemento : disciplinas){
+            dis.append("- ").append(elemento).append("\n");
+        }
+
+        return "Matricula: " + matricula +
+                "\nNome: " + nome +
+                "\nFiliação: " +
+                "\n  pai: " + filiacao[0] +
+                "\n  mãe: " + filiacao[1] +
+                "\nTelefones: " +
+                "\n" + tel +
+                "Disciplinas: " +
+                "\n" + dis;
+    }
 }

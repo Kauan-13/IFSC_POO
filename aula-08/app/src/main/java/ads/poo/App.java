@@ -66,5 +66,13 @@ public class App {
 
         Aluno a = new Aluno("Kauan", 123, new String[]{"Davi","Luciene"});
 
+        a.setDiciplina("POO");
+        a.setDiciplina("EST");
+
+        a.setTelefone("889234242");
+        a.setTelefone("889123412");
+
+        System.out.println(a);
+
     }
 }
