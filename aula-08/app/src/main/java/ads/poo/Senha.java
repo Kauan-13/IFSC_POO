@@ -8,7 +8,7 @@ public class Senha {
     private boolean preferencia;
     private LocalDateTime horario;
 
-    public Senha(Integer numero, String assunto, boolean preferencia, LocalDateTime horario) {
+    public Senha(Integer numero, boolean preferencia, String assunto, LocalDateTime horario) {
         this.numero = numero;
         this.assunto = assunto;
         this.preferencia = preferencia;
