@@ -4,14 +4,15 @@
 classDiagram
     
     direction LR
-    Aluno -- Curso
+    Aluno "1" --* "1..*" Curso
+    Cpf "1" --* "1" Aluno 
     
     class Aluno{
-        - nome: String
-        - matricula: String
-        - cpf: Cpf
+        - nome : String
+        - matricula : String
+        - cpf : Cpf
         
-        + Aluno(nome: String , matricula: String)
+        + Aluno(nome :String, matricula :String)
     }
     
     class Cpf{
