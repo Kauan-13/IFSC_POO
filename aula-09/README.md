@@ -50,18 +50,18 @@ classDiagram
     }
     
     class Telefone{
-        -rotulo : String
-        -valor : String
+        -rotulo: String
+        -valor: String
         
         +Telefone(r: String, v: String)
         +toString() String
     }
     
     class Email{
-        -rotulo : String
-        -valor : String
+        -rotulo: String
+        -valor: String
 
-        +Telefone(r: String, v: String)
+        +Email(r: String, v: String)
         +toString() String
     }
 
