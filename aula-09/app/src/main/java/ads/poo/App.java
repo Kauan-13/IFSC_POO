@@ -3,12 +3,34 @@
  */
 package ads.poo;
 
+import javax.swing.text.MaskFormatter;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.Month;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        App app = new App();
+
+        Contato contato = new Contato("Kauan", "Freitas", LocalDate.of(2006, Month.MARCH, 25));
+
+        contato.addTelefone("Pessoal", "88912312312");
+
+        contato.addEmail("Pessoal", "kauanffreitas57@gmail.com");
+
+        contato.addTelefone("Empresarial","88123422098");
+
+        contato.addEmail("Faculdade", "kauan.of@aluno.ifsc.edu.br");
+
+        System.out.println(contato);
+
+        contato.removeTelefone("Empresarial");
+
+        System.out.println(contato);
+
+        contato.updateTelefone("Pessoal","12123451234");
+
+        System.out.println(contato);
     }
 }
