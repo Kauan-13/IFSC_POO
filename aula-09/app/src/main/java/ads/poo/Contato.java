@@ -19,6 +19,14 @@ public class Contato {
         emails = new ArrayList<>();
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
     public boolean addTelefone(String rotulo, String numero) {
         return telefones.add(new Telefone(rotulo,numero));
     }

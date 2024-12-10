@@ -3,34 +3,72 @@
  */
 package ads.poo;
 
+import org.checkerframework.checker.units.qual.A;
+
 import javax.swing.text.MaskFormatter;
+import java.sql.SQLOutput;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 public class App {
+
+    private Agenda agenda;
+    private Scanner leitor;
+
+    public App() {
+        agenda = new Agenda();
+        leitor = new Scanner(System.in);
+    }
+
+    public void menu() {
+        int opcao = -1;
+
+        while (opcao != 0) {
+            System.out.println("""
+                ..::Agenda::..
+                1 - Cadastrar
+                2 - Atualizar
+                3 - Excluir
+                4 - Detalhes de um contato
+                5 - Listar todos os contatos
+                0 - Sair
+                """);
+            opcao = leitor.nextInt();
+            this.leitor.nextLine();
+
+            switch (opcao) {
+                case 1 -> cadastrar();
+                case 5 -> listar();
+            }
+        }
+    }
+
+    public void cadastrar() {
+        System.out.print("Digite o nome e sobrenome: ");
+        String nomeCompleto = this.leitor.nextLine();
+        String[] nomes = nomeCompleto.split(" ");
+
+        System.out.print("Digite a data de nascimento (dd/MM/AAAA): ");
+        String dataStr = this.leitor.nextLine();
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataNasc = LocalDate.parse(dataStr, dtf);
+
+        Contato contato = new Contato(nomes[0],nomes[1],dataNasc);
+
+        agenda.addContato(contato);
+    }
+
+    public void listar() {
+        System.out.println(agenda);
+    }
 
     public static void main(String[] args) {
         App app = new App();
 
-        Contato contato = new Contato("Kauan", "Freitas", LocalDate.of(2006, Month.MARCH, 25));
-
-        contato.addTelefone("Pessoal", "88912312312");
-
-        contato.addEmail("Pessoal", "kauanffreitas57@gmail.com");
-
-        contato.addTelefone("Empresarial","88123422098");
-
-        contato.addEmail("Faculdade", "kauan.of@aluno.ifsc.edu.br");
-
-        System.out.println(contato);
-
-        contato.removeTelefone("Empresarial");
-
-        System.out.println(contato);
-
-        contato.updateTelefone("Pessoal","12123451234");
-
-        System.out.println(contato);
+        app.menu();
     }
 }

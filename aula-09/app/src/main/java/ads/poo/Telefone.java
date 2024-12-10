@@ -9,7 +9,7 @@ public class Telefone {
 
     public Telefone(String rotulo, String valor) {
         this.rotulo = rotulo;
-        this.valor = this.formata("(##)#####-####",valor);
+        this.setValor(valor);
     }
 
     public String getRotulo() {
@@ -17,7 +17,7 @@ public class Telefone {
     }
 
     public void setValor(String valor) {
-        this.valor = valor;
+        this.valor = this.formata("(##)#####-####",valor);
     }
 
     public String formata(String mascara, String valor){
