@@ -7,13 +7,36 @@ import ads.poo.produtos.Dimensao;
 import ads.poo.produtos.SemFio;
 import ads.poo.produtos.Telefone;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class App {
 
     public static void main(String[] args) {
-        Telefone telefone = new Telefone(1234,"1234-12","ABC",12,new Dimensao(10,10,10));
 
-        SemFio semFio = new SemFio(12345678,"1234-1234","ABCabc",15,new Dimensao(2,10,15),12,10,10);
+        ArrayList<Telefone> telefones = new ArrayList<>();
 
+        telefones.add(new Telefone(1234,"1234-12","ABC",12,new Dimensao(10,10,10)));
+
+        telefones.add(new SemFio(12345678,"1234-1234","ABCabc",15,new Dimensao(2,10,15),12,10,10));
+
+        for (Telefone tel : telefones) {
+            System.out.println(tel.imprimirDados());
+            if (tel instanceof SemFio) {
+                System.out.println(((SemFio) tel).trocarCanal());
+            } else {
+                System.out.println("Não é SemFio");
+            }
+        }
+
+
+//        Telefone b = semFio;
+//
+//        if (b instanceof SemFio) {
+//            System.out.println(((SemFio) b).trocarCanal());
+//        } else {
+//            System.out.println("Não é semfio");
+//        }
 
     }
 }

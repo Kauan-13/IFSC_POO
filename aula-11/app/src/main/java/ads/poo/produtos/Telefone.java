@@ -15,6 +15,10 @@ public class Telefone {
         this.dimensao = dimensao;
     }
 
+    public String discar() {
+        return "discando...";
+    }
+
     public String imprimirDados() {
         return "Telefone{" +
                 "codigo=" + codigo +
