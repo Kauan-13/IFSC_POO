@@ -1,6 +1,8 @@
 package ads.poo.personagens;
 
-public class Arqueiro extends Pessoa{
+import ads.poo.interfaces.Guerreiro;
+
+public class Arqueiro extends Personagem implements Guerreiro {
 
     public Arqueiro(double vida, double ataque, double velocidade) {
         super(vida, ataque, velocidade);

@@ -1,6 +1,8 @@
 package ads.poo.personagens;
 
-public class Cavaleiro extends Pessoa{
+import ads.poo.interfaces.Guerreiro;
+
+public class Cavaleiro extends Personagem implements Guerreiro {
 
     public Cavaleiro(double vida, double ataque, double velocidade) {
         super(vida, ataque, velocidade);

@@ -10,23 +10,24 @@ import java.util.ArrayList;
 public class App {
 
     public static void main(String[] args) {
-        ArrayList<Pessoa> personagens = new ArrayList<>();
+        ArrayList<Personagem> personagens = new ArrayList<>();
 
         personagens.add(new Aldeao(25, 1, 0.8));
         personagens.add(new Arqueiro(35, 2, 1));
         personagens.add(new Cavaleiro(50, 3, 2));
-        personagens.add(new Catapulta(70,8,0.3));
 
-        for (Pessoa per : personagens) {
-            switch (per) {
-                case Aldeao aldeao -> System.out.println("Aldeão: ");
-                case Arqueiro arqueiro -> System.out.println("Arqueiro: ");
-                case Cavaleiro cavaleiro -> System.out.println("Cavaleiro");
-                case Catapulta catapulta -> System.out.println("Catapulta: ");
-                default -> throw new IllegalStateException("Unexpected value: " + per);
-            }
-            System.out.println(per.mover());
-            System.out.println(per.atacar());
-        }
+        System.out.println(((Aldeao) personagens.get(0)).coletarOuro());
+
+//        for (Personagem per : personagens) {
+//            switch (per) {
+//                case Aldeao aldeao -> System.out.println("Aldeão: ");
+//                case Arqueiro arqueiro -> System.out.println("Arqueiro: ");
+//                case Cavaleiro cavaleiro -> System.out.println("Cavaleiro");
+//                case Catapulta catapulta -> System.out.println("Catapulta: ");
+//                default -> throw new IllegalStateException("Unexpected value: " + per);
+//            }
+//            System.out.println(per.mover());
+//            System.out.println(per.atacar());
+//        }
     }
 }

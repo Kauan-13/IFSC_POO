@@ -1,22 +1,16 @@
 package ads.poo.personagens;
 
-public class Pessoa {
+public abstract class Personagem {
     protected double vida;
     protected double ataque;
     protected double velocidade;
 
-    public Pessoa(double vida, double ataque, double velocidade) {
+    public Personagem(double vida, double ataque, double velocidade) {
         this.vida = vida;
         this.ataque = ataque;
         this.velocidade = velocidade;
     }
 
-    public String atacar() {
-        return "Atacando";
-    }
-
-    public String mover() {
-        return "Movendo";
-    }
+    public abstract String mover();
 
 }

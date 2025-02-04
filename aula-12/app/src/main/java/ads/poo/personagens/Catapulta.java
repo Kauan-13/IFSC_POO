@@ -1,6 +1,6 @@
 package ads.poo.personagens;
 
-public class Catapulta extends Pessoa{
+public class Catapulta extends Personagem {
     public Catapulta(double vida, double ataque, double velocidade) {
         super(vida, ataque, velocidade);
     }
